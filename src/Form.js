@@ -5,7 +5,10 @@ export default function Form() {
     firstName: "",
     lastName: "",
     email: "",
+    comments: "",
   });
+
+  console.log(formData.comments);
 
   function handleChange(event) {
     setFormData((prevFormData) => {
@@ -15,7 +18,6 @@ export default function Form() {
       };
     });
   }
-
   return (
     <form>
       <input
@@ -38,6 +40,12 @@ export default function Form() {
         onChange={handleChange}
         name="email"
         value={formData.email}
+      />
+      <textarea
+        value={formData.comments}
+        placeholder="Comments"
+        onChange={handleChange}
+        name="comments"
       />
     </form>
   );
